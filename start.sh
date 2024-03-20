@@ -13,7 +13,7 @@ sudo touch "/etc/nginx/sites-available/viosissite"
 
 sudo echo "server {
             listen 80;
-            server_name vio-sis.louvesaintjeu.com;
+            server_name vio-sis.chaireclairebonenfant.ca;
 
             location / {
                 proxy_pass http://0.0.0.0:8000;
