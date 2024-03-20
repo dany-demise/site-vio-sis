@@ -2,7 +2,7 @@
 
 # Install Python and pip
 apt install python3 python3-pip -y
-
+# ok
 # Install system dependencies
 apt install nginx -y
 
