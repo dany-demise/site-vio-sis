@@ -1,17 +1,17 @@
 #!/bin/bash
 
 # Install Python and pip
-apt install python3 python3-pip -y
+sudo apt install python3 python3-pip -y
 # ok
 # Install system dependencies
-apt install nginx -y
+sudo apt install nginx -y
 
 # Install Django and other project requirements
-pip install -r ./requirements.txt
+sudo pip install -r ./requirements.txt
 
-touch "/etc/nginx/sites-available/viosissite"
+sudo touch "/etc/nginx/sites-available/viosissite"
 
-echo "server {
+sudo echo "server {
             listen 80;
             server_name vio-sis.louvesaintjeu.com;
 
@@ -25,12 +25,12 @@ echo "server {
 
         }" > "/etc/nginx/sites-available/viosissite"
 
-ln -sf "/etc/nginx/sites-available/viosissite" "/etc/nginx/sites-enabled/"
+sudo ln -sf "/etc/nginx/sites-available/viosissite" "/etc/nginx/sites-enabled/"
 
 # Restat Nginx
-service nginx restart
+sudo service nginx restart
 
 # Replaced by gunicorn
-nohup python3 main.py > server.logs 2>&1 &
+sudo nohup python3 main.py > server.logs 2>&1 &
 
 tail -f server.logs
